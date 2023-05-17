@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electro Shop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Modo diurno */
+    .day-mode {
+      background-color: #fff;
+      color: #333;
+    }
+
+    .day-mode header {
+      background-color: #fff;
+      color: #333;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .day-mode h1,
+    .day-mode p.slogan,
+    .day-mode nav a,
+    .day-mode footer p,
+    .day-mode footer a {
+      color: #333;
+    }
+
+    .day-mode .cart {
+      color: #333;
+    }
+
+    .day-mode main {
+      padding: 40px;
+    }
+
+    .day-mode h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .day-mode .highlighted-products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .day-mode .product-card {
+      background-color: #f2f2f2;
+      padding: 20px;
+      border-radius: 10px;
+      flex-basis: 100%;
+      max-width: 300px;
+    }
+
+    /* Modo noturno */
+    .night-mode {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .night-mode header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .night-mode h1,
+    .night-mode p.slogan,
+    .night-mode nav a,
+    .night-mode footer p,
+    .night-mode footer a {
+      color: #fff;
+    }
+
+    .night-mode .cart {
+      color: #00ff00;
+    }
+
+    .night-mode main {
+      padding: 40px;
+    }
+
+    .night-mode h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .night-mode .highlighted-products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .night-mode .product-card {
+      background-color: #444;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      flex-basis: 100%;
+      max-width: 300px;
+    }
+
+    footer {
+      background-color: #333;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+      color: #fff;
+    }
+
+    footer a {
+      color: #00ff00;
+      text-decoration: none;
+    }
+  </style>
+  <script>
+    function toggleMode() {
+      const body = document.querySelector("body");
+      const header = document.querySelector("header");
+      const h1 = document.querySelector("h1");
+      const slogan = document.querySelector(".slogan");
+      const navLinks = document.querySelectorAll("nav a");
+      const cartIcon = document.querySelector(".cart");
+      const highlightedProducts = document.querySelectorAll(".highlighted-products");
+      const productCards = document.querySelectorAll(".product-card");
+      const footer = document.querySelector("footer");
+      const footerLinks = document.querySelectorAll("footer a");
+
+      body.classList.toggle("night-mode");
+      header.classList.toggle("night-mode");
+      h1.classList.toggle("night-mode");
+      slogan.classList.toggle("night-mode");
+      navLinks.forEach(link => link.classList.toggle("night-mode"));
+      cartIcon.classList.toggle("night-mode");
+      highlightedProducts.forEach(product => product.classList.toggle("night-mode"));
+      productCards.forEach(card => card.classList.toggle("night-mode"));
+      footer.classList.toggle("night-mode");
+      footerLinks.forEach(link => link.classList.toggle("night-mode"));
+    }
+  </script>
+</head>
+<body class="day-mode">
+  <header>
+    <div>
+      <h1>Electro Shop</h1>
+      <p class="slogan">Somos Electro, não há igual, isso é certo</p>
+    </div>
+    <nav>
+      <a href="#">Produtos</a>
+      <a href="#">Área do Cliente</a>
+      <a href="#">Pesquisa</a>
+      <a href="#"><i class="cart">Carrinho de Compras</i></a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Produtos em Destaque</h2>
+    <div class="highlighted-products">
+      <div class="product-card">
+        <h3>Produto 1</h3>
+        <p>Descrição do produto 1.</p>
+      </div>
+      <div class="product-card">
+        <h3>Produto 2</h3>
+        <p>Descrição do produto 2.</p>
+      </div>
+      <div class="product-card">
+        <h3>Produto 3</h3>
+        <p>Descrição do produto 3.</p>
+      </div>
+    </div>
+
+    <h2>Campanhas</h2>
+    <div class="highlighted-products">
+      <div class="product-card">
+        <h3>Campanha 1</h3>
+        <p>Descrição da campanha 1.</p>
+      </div>
+      <div class="product-card">
+        <h3>Campanha 2</h3>
+        <p>Descrição da campanha 2.</p>
+      </div>
+      <div class="product-card">
+        <h3>Campanha 3</h3>
+        <p>Descrição da campanha 3.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Electro Shop. Todos os direitos reservados. | <a href="mailto:contato@electroshop.com">contato@electroshop.com</a></p>
+  </footer>
+
+  <button onclick="toggleMode()">Alternar Modo</button>
+</body>
+</html>
