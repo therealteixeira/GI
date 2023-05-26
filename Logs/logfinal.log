@@ -1,3 +1,17 @@
+commit fc38bf61fc4775f069d451133b653df655cb1fb1
+Author: therealteixeira <1210671@isep.ipp.pt>
+Date:   Wed May 24 18:37:23 2023 +0100
+
+    Adição de três páginas html
+    
+    -signup.html
+    -login2.html
+    -vistachefe.html
+    
+    com as aplicações web responsivas
+    
+    Falta alterações do header e footer com base no teste.html
+
 commit b2b2195d168373b0a45df43362d871af1006bbdc
 Author: therealteixeira <1210671@isep.ipp.pt>
 Date:   Wed May 24 18:34:59 2023 +0100
