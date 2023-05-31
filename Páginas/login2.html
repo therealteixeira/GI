@@ -200,29 +200,65 @@
   <img class="logo" src="/home/therealteixeira/trabalhodeapc/P06Gestaodeinventario/images/logo.png" alt="Logo Electro Shop">
 </header>
 
+
     <div class="h2">
-    <h2>Iniciar a sessão na sua conta pessoal</h2>
-    <form>
-      <div class="form-group">
-        <label for="username">Nome de Usuário:</label>
-        <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
-      </div>
-      <div class="form-group">
-        <input type="checkbox" id="showPassword">
-        <label for="showPassword" class="show-password">Mostrar senha</label>
-      </div>
-      <button type="submit">Login</button>
-    </form>
-    <p>Não possui uma conta? <a href="signup.html">Crie uma agora</a></p>
-  </div>
+      <h2>Iniciar a sessão na sua conta pessoal</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Nome de Usuário:</label>
+          <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="showPassword">
+          <label for="showPassword" class="show-password">Mostrar senha</label>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <p>Não possui uma conta? <a href="signup.html">Crie uma agora</a></p>
+    </div>
+
     <footer>
-    <p>Entre em contato: email@example.com | Telefone: (123) 456-7890</p>
-    <p>&copy; 2023 Electro Shop. Todos os direitos reservados.</p>
-  </footer>
+      <p>Entre em contato: apoio@electroshop.com | Telefone: (+351) 912 345 678</p>
+      <p>&copy; 2023 Electro Shop. Todos os direitos reservados.</p>
+    </footer>
+   <script>
+    // Get the form element
+    const loginForm = document.getElementById('login-form');
+
+    // Add event listener for form submission
+    loginForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get the input field values
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Perform login validation (replace with your own logic)
+      if (username === 'admin' && password === 'password') {
+        alert('Login successful');
+        // Redirect to another page
+        window.location.href = 'dashboard.html';
+      } else {
+        alert('Invalid username or password');
+      }
+    });
+
+    // Show/hide password functionality
+    const showPasswordCheckbox = document.getElementById('showPassword');
+    const passwordInput = document.getElementById('password');
+
+    showPasswordCheckbox.addEventListener('change', function() {
+      if (showPasswordCheckbox.checked) {
+        passwordInput.type = 'text';
+      } else {
+        passwordInput.type = 'password';
+      }
+    });
+  </script>
   </body>
 </html>
 
