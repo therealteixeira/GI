@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Criar Nova Conta</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 100px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      color: #333;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #666;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    .role-select {
+      margin-top: 10px;
+    }
+    
+    .show-password {
+      margin-top: 10px;
+      display: inline-block;
+    }
+    
+      @media screen and (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+    
+    h2 {
+      font-size: 10px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      padding: 5px;
+    }
+    
+    .show-password {
+      font-size: 12px;
+    }
+  }
+  
+
+  @media screen and (max-width: 480px) {
+    .container {
+      padding: 5px;
+    }
+    
+    h2 {
+      font-size: 5px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      padding: 3px;
+    }
+    
+    .show-password {
+      font-size: 10px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Criar Nova Conta</h2>
+    <form action="registro.py" method="post"> <!-- Definindo o arquivo Python para processar o formulário -->
+      <div class="form-group">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+      </div>
+      <div class="form-group">
+        <label for="role">Função:</label>
+        <select id="role" name="role" class="role-select" required>
+          <option value="" disabled selected>Selecione sua função</option>
+          <option value="employee">Funcionário</option>
+          <option value="manager">Chefe</option>
+          <option value="customer">Cliente</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirmar Senha:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirme sua senha" required>
+      </div>
+      <button type="submit">Criar Conta</button>
+    </form>
+  </div>
+</body>
+</html>
