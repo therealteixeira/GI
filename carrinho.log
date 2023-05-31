@@ -1,0 +1,17 @@
+commit fc6b0ded9eed347e5c621ce107ce2a5c0f71cd32
+Author: jonhy <1211680@isep.ipp.pt>
+Date:   Wed May 31 18:33:47 2023 +0100
+
+    responsividade e alertas para quando é introduzido uma letra em vez de um numero, e mais do que 10 itens de cada produto tb emite um alerta
+
+commit 2603d7250c641ff22be6600d2e5485c34c5b941a
+Author: jonhy <1211680@isep.ipp.pt>
+Date:   Wed May 24 18:48:24 2023 +0100
+
+    Carrinho base feito
+
+commit 60ba64eef19e9edeff8f3d02b46b6525ad8b68b7
+Author: therealteixeira <132482000+therealteixeira@users.noreply.github.com>
+Date:   Wed May 3 17:02:34 2023 +0100
+
+    Initial commit
