@@ -23,6 +23,7 @@
     
   
     header {
+      height: 90px;
       background-color: #333;
       color: #fff;
       padding: 10px 15px; 
@@ -37,7 +38,23 @@
   max-width: 200px; /* Ajuste o tamanho máximo da imagem aqui */
 }
 
-  
+.login-link {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  .logo {
+  text-align: center;
+ 
+  color: #800000;
+  font-size: 40px;
+  font-weight: bold;
+}
+
 footer {
   background-color: #333;
   color: #fff;
@@ -55,14 +72,13 @@ footer {
     }
     
     table {
-      width: 100%;
-      border-collapse: collapse;
+      width: 90%;
       margin-bottom: 20px;
     }
     
     th, td {
       padding: 10px;
-      text-align: left;
+      text-align: center;
       border-bottom: 1px solid #ddd;
     }
     
@@ -70,15 +86,22 @@ footer {
       background-color: #f9f9f9;
     }
     
+    
+    
+    
+      
+    table img {
+      max-width: 150px; /* Defina o tamanho máximo das imagens aqui */
+    }
 
     form {
-      max-width: 500px;
+      max-width: 900px;
       margin: 0 auto;
     }
     
     label {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 1px;
     }
     
     input[type="text"],
@@ -101,14 +124,14 @@ footer {
     
     input[type="submit"] {
       padding: 10px 20px;
-      background-color: #4CAF50;
+      background-color: #800000;
       border: none;
       color: #fff;
       cursor: pointer;
     }
     
     input[type="submit"]:hover {
-      background-color: #45a049;
+      background-color: #660000;
     }
     
     
@@ -148,19 +171,45 @@ li { border: 1px gray solid; background-color:rgb(150,20,20) }}
 
     footer p {
       margin: 0;
-      color: #fff;
+      color: ##660000;
     }
 
     footer a {
-      color: #00ff00;
+      color: #CD5C5C;
       text-decoration: none;
     }
 
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-container input {
+    width: 600px;
+    padding: 20px;
+  }
+  
+  
+  
 
-
+  
+  
+  
+  
+  
   </style>
   
+  <header>
   
+  <h1 class="logo">Electro Shop</h1>
+
+  <!-- Adicione o ícone e o link para a página de login -->
+  <a href="pagina-login.html" class="login-link">
+    <i class="fas fa-user"></i>
+  </a>
+</header>
   
   <script>
     function updateTotal() {
@@ -187,59 +236,102 @@ li { border: 1px gray solid; background-color:rgb(150,20,20) }}
       document.getElementById("totaltotal").innerText = totaltotal.toFixed(2) + " €";
     }
   </script>
+  
+  
+  
+  <head>
+  <!-- Restante do código -->
+
+  <!-- Adicione o link para a biblioteca do Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
+
+
+</head>
+
+
 <body>
+
+ <div class="search-bar">
+    <input type="text" placeholder="Pesquisar...">
+    <button><i class="fas fa-search"></i></button>
+  </div>
+
+  <div class="content">
+    <h1>Carrinho de Compras</h1>
+    
+    
+    
+<div class="search-container">
+    <input type="text" id="search" name="search" placeholder="Pesquisar produtos ou categorias">
+  </div>
+  
+  
+  
+  
   <h1>Carrinho de Compras</h1>
   
   <br></br>
   
+  
+  
+  
   <table>
     <tr>
-      <th>Produto</th>
+      <th></th>
+      <th>Produtos</th>
       <th>Preço</th>
       <th>Quantidade</th>
       <th>Total</th>
     </tr>
     <tr>
-      <td>Produto 1</td>
+      <td><img src="https://www.worten.pt/i/ac0a8f483d5e5f1fe1dc49e3f28de10951b2fd14.jpg" alt="Imagem Produto 1"></td>
+      <td>Teclado mecanico Razer</td>
+      
       <td>10.00€</td>
       <td>
-        
         <input type="number" id="quantity" value="1" min="1" max="10" onchange="updateTotal()">
-    
       </td>
       <td id="total">10.00 €</td>
     </tr>
     
     <tr>
-  <td>Produto 2</td>
-  <td>15.00€</td>
-  <td>
-  
-    <input type="number" id="quantity2" value="1" min="1" max="10" onchange="updateTotal()">
-   
-  </td>
-  <td id="total2">15.00 €</td>
-  
-  </tr>
-  
-  <td></td>
-  <td></td>
-  <td>
-   
-  </td>
-  <td id="totaltotal">25.00 €</td>
-  
-  
-  
+    <td>
+      <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/20/7d/53/5471520/1540-1.jpg" alt="Imagem Produto 2"></td>
+      <td>Focusrite Scarlett Solo Studio 3rd Gen</td>
+     
+      <td>15.00€</td>
+      <td>
+        <input type="number" id="quantity2" value="1" min="1" max="10" onchange="updateTotal()">
+      </td>
+      <td id="total2">15.00 €</td>
+    </tr>
+    
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td id="totaltotal">25.00 €</td>
+      
+      
   
 </tr>
 
   </table>
   
   
+  
   <form>
     
+    <h2>Tem algum código de desconto? :D</h2>
+    <label for="coupon">Código do Cupom:</label>
+    <input type="text" id="coupon" name="coupon" placeholder="Digite o código do cupom"><br><br>
+    
+    <input type="submit" value="Aplicar Cupom">
+    
+  
     
     <h3>Opções de Pagamento</h3>
     <label for="card">Cartão Bancário</label>
@@ -255,7 +347,7 @@ li { border: 1px gray solid; background-color:rgb(150,20,20) }}
     
     
     
-    <h3>Opções de Entrega</h3>
+    <h2>Opções de Entrega</h2>
     <label for="pickup">Levantar em Loja:</label>
     <input type="radio" id="pickup" name="delivery" value="pickup"><br>
     
@@ -303,20 +395,32 @@ li { border: 1px gray solid; background-color:rgb(150,20,20) }}
   </form>
   
   <br> </br> 
+  
+  <br> </br> 
+ 
   <script>
     function increaseQuantity() {
       var quantity = parseInt(document.getElementById("quantity").value);
       if (quantity < 10) {
         document.getElementById("quantity").
         
+        
+
+        
+        
         </script>
        
      
         
   <footer>
-    <p>&copy; 2023 Electro Shop. Todos os direitos reservados. | <a href="mailto:contato@electroshop.com">contato@electroshop.com</a></p>
-  </footer>
+  <div class="footer-links">
+    <a href="termos-e-condicoes.html">Termos e Condições</a>
+    <a href="politica-de-privacidade.html">Política de Privacidade</a>
+    |
+    <a href="contato.html">Contactos</a>
+  </div>
+  <p>&copy; 2023 Electro Shop. Todos os direitos reservados.</p>
+</footer>
 
 </body>
 </html>
-
