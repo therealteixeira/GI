@@ -182,59 +182,49 @@
 }
 
 
-.product-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* Para distribuir os produtos igualmente */
-  align-items: flex-end; /* Para alinhar os três parâmetros na parte inferior */
-  margin-top: 160px;
-}
+  .product-section {
+      display: flex;
+      justify-content: center;
+      margin-top: 100px;
+    }
 
-.product {
-  width: calc(33.33% - 20px);
-  margin: 10px;
-  background-color: #fff;
-  padding: 20px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  height: 100%;
-  flex-shrink: 0;
-}
+    .product {
+      display: flex;
+      align-items: center;
+      text-align: left;
+    }
 
-.product img {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  margin-bottom: 10px;
-}
+    .product img {
+      width: 300px;
+      height: auto;
+      margin-right: 20px;
+    }
 
-.product-name {
-  font-weight: bold;
-  margin-bottom: auto; /* Alterado para alinhar na parte inferior */
-  margin-top: auto;
-}
+    .product-details {
+      display: flex;
+      flex-direction: column;
+    }
 
-.product-price {
-  margin-bottom: 10px;
-  margin-top: auto; /* Alterado para alinhar na parte inferior */
-}
+    .product-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
 
-.view-product {
-  background-color: #a30000;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: auto;
-}
-  
-  .view-product a {
-  color: #fff;
-  text-decoration: none;
-}
+    .product-price {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .product-description {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .product-stock {
+      font-size: 16px;
+      color: #888;
+    }
 
   
   
@@ -328,110 +318,54 @@ footer {
       </div>
     </header>
 
-    <div class="content">
-      <div class="product-section">
-        <div class="product">
-          <img src="teclado.jpg" alt="Imagem do Produto">
+  
+    <div class="product-section">
+      <div class="product">
+        <img src="teclado.jpg" alt="Imagem do Produto">
+        <div class="product-details">
           <div class="product-name">Teclado Gaming</div>
           <div class="product-price">19,99€</div>
-          <div class="view-product"><a href="teclado.html">Ver Produto  </a>
+          <div class="product-description">
+            <p>
+              Este teclado gaming possui iluminação RGB personalizável e teclas mecânicas responsivas, proporcionando uma ótima experiência de jogo.
+            </p>
           </div>
-        
+          <div class="product-stock">
+            <?php
+            
+            $db = new SQLite3('stock.db');
+$produto = 'Teclado Gaming';
+
+// Obtém a quantidade total do produto no banco de dados
+$stmt = $db->prepare('SELECT SUM(quantidade) AS total FROM stock WHERE produto = produto');
+$stmt->bindValue('produto', $produto, SQLITE3_TEXT);
+$result = $stmt->execute();
+$row = $result->fetchArray();
+
+//$quantidadeTotal = $row['total'];
+
+
+     
+
+            if ($row) {
+              $quantidadeTotal = $row['total'];
+              echo 'Em stock: ' . $quantidadeTotal . ' unidades';
+            } else {
+              echo 'Produto não encontrado';
+            }
+
+            $db->close();
+            ?>
+          </div>
+          
+         <div class="buy-button">
+          <button type="button" onclick="addToCart()">Comprar</button>
         </div>
-
-       <div class="product">
-        <img src="headset.jpg" alt="Imagem do Produto">
-        <div class="product-name">Headset RGB Stu</div>
-        <div class="product-price">14,99€</div>
-        <div class="view-product">Ver Produto</div>
-      </div>
-
-
-
- <div class="product">
-        <img src= "2070.jpg" alt="Imagem do Produto">
-        <div class="product-name">Placa Gráfica 2070</div>
-        <div class="product-price">299,99€</div>
-        <div class="view-product">Ver Produto</div>
-      </div>
-
-
-
-
- <div class="product">
-        <img src="colunatorre.jpg" alt="Imagem do Produto">
-        <div class="product-name">Coluna SoundBoost XL</div>
-        <div class="product-price">99,99€</div>
-        <div class="view-product">Ver Produto</div>
-      </div>
-
-
-
-
-
- <div class="product">
-        <img src="microfoneinicial.jpg" alt="Imagem do Produto">
-        <div class="product-name">Microfone Basic</div>
-        <div class="product-price">17,99€</div>
-        <div class="view-product">Ver Produto</div>
-      </div>
-
-
-
-
-
- <div class="product">
-        <img src="minicolunas.jpg" alt="Imagem do Produto">
-        <div class="product-name">Colunas MiniWot</div>
-        <div class="product-price">12,99€</div>
-        <div class="view-product">Ver Produto</div>
-      </div>
-
-
-
-
-
-
- <div class="product">
-        <img src="tapete.jpg" alt="Imagem do Produto">
-        <div class="product-name">tabete RGB Basic</div>
-        <div class="product-price">9,99€</div>
-        <div class="view-product">Ver Produto</div>
-      </div>
-
-
-
-
-
-
- <div class="product">
-        <img src="monitor.jpg" alt="Imagem do Produto">
-        <div class="product-name">Monitor Casoc 144Hz</div>
-        <div class="product-price">199,99£</div>
-        <div class="view-product">Ver Produto</div>
-      </div>
-
-
-
-
-
-
- <div class="product">
-        <img src="rato.jpg" alt="Imagem do Produto">
-        <div class="product-name">Rato RGB Zelos</div>
-        <div class="product-price">7,77€</div>
-        <div class="view-product">Ver Produto</div>
-      </div>
-
-
+  
+        </div>
       </div>
     </div>
-</div>
-    <footer>
-      <p>Entre em contato: apoio@electroshop.com | Telefone: (+351) 912 345 678</p>
-      <p>&copy; 2023 Electro Shop. Todos os direitos reservados.</p>
-    </footer>
-  </div>
+
 
   <script>
     // Função para abrir/fechar a aba lateral
@@ -440,5 +374,22 @@ footer {
       sidebar.classList.toggle('open');
     }
   </script>
+  
+  <script>
+    function addToCart() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'stock.php', true);
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          window.location.href = 'carrinho.php';
+        } else {
+          console.log('Erro ao atualizar o estoque');
+        }
+      };
+      xhr.send();
+    }
+  </script>
+  
+  
 </body>
 </html>

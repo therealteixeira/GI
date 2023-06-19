@@ -56,7 +56,7 @@
     }
 
     header img {
-  max-width: 200px; /* Ajuste o tamanho máximo da imagem aqui */
+  max-width: 100px; /* Ajuste o tamanho máximo da imagem aqui */
 }
 
 
@@ -73,9 +73,9 @@
       cursor: pointer;
       align-items: center;
       position: absolute;
-      top: 50px;
+      top: 20px;
       right: 10px;
-      font-size: 32px;
+      font-size: 24px;
       margin-right: 5px;
     }
 
@@ -92,9 +92,9 @@
       cursor: pointer;
       align-items: center;
       position: absolute;
-      top: 50px;
-      right: 60px;
-      font-size: 32px;
+      top: 20px;
+      right: 45px;
+      font-size: 24px;
 	  margin-right: 5px;
        
  
@@ -131,11 +131,11 @@
 
 .menu-icon {
   color: #fff;
-  font-size: 32px;
+  font-size: 24px;
   padding: 10px;
   cursor: pointer;
   position: fixed;
-  top: 50px;
+  top: 20px;
   left: 10px;
 }
 .menu-icon:hover {
@@ -163,7 +163,7 @@
 .sidebar h3 {
 	color: #b30000;
   padding: 10px;
-  margin-top: 57px;
+  margin-top: 25px;
 }
 
 .sidebar ul {
@@ -185,13 +185,15 @@
 .product-section {
   display: flex;
   flex-wrap: wrap;
+   margin: 0 5px;
   justify-content: space-between; /* Para distribuir os produtos igualmente */
   align-items: flex-end; /* Para alinhar os três parâmetros na parte inferior */
   margin-top: 160px;
 }
 
 .product {
-  width: calc(33.33% - 20px);
+   width: calc(20% - 10px);
+  flex-basis: calc(20% - 10px);
   margin: 10px;
   background-color: #fff;
   padding: 20px;
@@ -231,10 +233,6 @@
   margin-top: auto;
 }
   
-  .view-product a {
-  color: #fff;
-  text-decoration: none;
-}
 
   
   
@@ -311,14 +309,17 @@ footer {
           <li>Imagem</li>
           <li>Som</li>
           <!-- Adicione mais categorias conforme necessário -->
-        </ul> 
+        </ul>
       </div>
-      <img src="logo.png" alt="Logo Electro Shop">
+        <a href="teste.html">
+        <img src="logo.png" alt="Logo Electro Shop">
+      </a>
+      
       <div class="menu-icon" onclick="toggleSidebar()">
         <i class="fas fa-bars"></i>
       </div>
       <div class="client-area">
-        <a href="login2.html">
+        <a href="/home/eduardo/pjt/login2.html">
           <i class="fas fa-user"></i>
           <span class="tooltip">Login ou criar conta</span>
         </a>
@@ -329,14 +330,13 @@ footer {
     </header>
 
     <div class="content">
+		<h2>Todos os produtos</h2>
       <div class="product-section">
         <div class="product">
           <img src="teclado.jpg" alt="Imagem do Produto">
           <div class="product-name">Teclado Gaming</div>
           <div class="product-price">19,99€</div>
-          <div class="view-product"><a href="teclado.html">Ver Produto  </a>
-          </div>
-        
+          <div class="view-product">Ver Produto</div>
         </div>
 
        <div class="product">
